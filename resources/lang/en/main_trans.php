@@ -5,6 +5,6 @@ return [
 
     'Dashboard'=>'Dashboard',
     'Orders' => 'Orders',
-    'Programname' =>'Orders MAnagement System',
+    'Programname' =>'Orders Management System',
     'OrdersList'=>'Orders List',
 ];

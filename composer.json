@@ -15,7 +15,9 @@
         "laravel/breeze": "1.9.2",
         "laravel/framework": "^8.46",
         "laravel/tinker": "^2.5",
-        "mcamara/laravel-localization": "^1.8"
+        "mcamara/laravel-localization": "^1.8",
+        "spatie/laravel-translatable": "*",
+        "yoeunes/toastr": "^2.3"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
