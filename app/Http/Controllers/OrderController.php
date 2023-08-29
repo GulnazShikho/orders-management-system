@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\Storeorders;
 use App\Order;
+use App\User;
 use App\OrderStatus;
 use Dotenv\Result\Success;
+use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
 
 public function index(){
         $orders=Order::all();
         $order_statuses = OrderStatus::all();
-        return view('Pages.orders' , ['orders'=>$orders],['order_statuses'=>$order_statuses]);
+        return view('Pages.orders' , ['orders'=>$orders],['order_statuses'=>$order_statuses],);
 }
 //store the order
 public function store(Storeorders $request)
@@ -26,6 +28,7 @@ public function store(Storeorders $request)
         $Order->order = $request->order;
         $Order->notes = $request->notes;
         $Order->status_id = $request->status_id;
+        $Order->user_id = auth()->id();
         $Order->save();
         toastr()->success(trans('messages.success'));
         return redirect()->route('orders.index');

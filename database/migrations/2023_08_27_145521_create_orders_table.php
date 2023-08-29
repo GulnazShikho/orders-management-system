@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('OrderTitle');
             $table->string('order');
             $table->text('notes')->nullable();
-          //  $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('status_id')->unsigned()->nullable();
             $table->timestamps();
 

@@ -12,11 +12,11 @@ class Order extends Model
     protected $table = 'orders';
     public $timestamps = true;
 
- /*many to one relashionshep between user and orders
- public function order()
+ /* many to one relashionshep between user and orders
+ public function user_order()
     {
-        return $this->belongsTo('app\user','user_id');
-    }*/
+        return $this->belongsTo('app\User','user_id');
+    */
 //one to one relashionshep between status and orders
  public function status()
  {

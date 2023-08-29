@@ -46,19 +46,23 @@
                                 <th>{{trans('Orders_Trans.Order')}}</th>
                                 <th>{{trans('Orders_Trans.Notes')}}</th>
                                 <th>{{trans('Orders_Trans.Status')}}</th>
+                                <th>{{trans('Orders_Trans.Status')}}</th>
                                 <th>{{trans('Orders_Trans.Processes')}}</th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <?php $i = 0; ?>
-                            @foreach ($orders as $Order)
+                            @foreach ($orders->where('user_id',Auth::user()->id); as $Order)
                                 <tr>
                                     <?php $i++; ?>
                                     <td>{{ $i }}</td>
                                     <td>{{ $Order->OrderTitle }}</td>
                                     <td>{{ $Order->order }}</td>
                                     <td>{{ $Order->notes }}</td>
+                                    <td>{{ $Order->user_id }}</td>
                                     <td>{{ $Order->status ?->StatusName}}</td>
+
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                                 data-target="#edit{{ $Order->id }}"
