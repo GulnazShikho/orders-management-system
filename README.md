@@ -1,4 +1,5 @@
 In order to Run the app  please  execute the Following :
+<br>
 php artisan migrate
 php artisan db:seed
 php artian serve 
