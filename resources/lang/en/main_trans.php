@@ -40,5 +40,13 @@ return [
     'NewOrderReceived'=>'New Order Received',
     'JustNow'=>'Just Now',
     'NewRegistereduser'=>'New Registered user',
+    'UserName'=>'User Name',
+    'UsersList'=>'Users List',
+    'Users'=>'Users',
+    'Roles'=>'Roles',
+    'MyOrders'=>'My Orders',
+    'language'=>'Language',
+    'wellcomeMessage' =>'Wellcome to orders management system',
+    'wellcomeMessage2'=>'please sign in to continue to your account,or sign up to join our website.',
 
 ];

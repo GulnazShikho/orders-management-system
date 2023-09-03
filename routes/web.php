@@ -29,6 +29,11 @@ Route::group(
 
         require __DIR__.'/auth.php';
         Route::resource('orders', OrderController::class);
+        Route::resource('userorders', UserOrderController::class);
+        Route::resource('users', UserController::class);
+
+
+
 
 
 });

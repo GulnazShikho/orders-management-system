@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests\Storeorders;
+use App\Order;
+use App\User;
+use App\OrderStatus;
+use Dotenv\Result\Success;
+use Illuminate\Support\Facades\Auth;
+
+class UserOrderController extends Controller
+{
+    //
+    public function show($id){
+        $orders=Order::all()->where('user_id',$id);
+        $order_statuses = OrderStatus::all();
+        return view('Pages.UserOeders' , ['orders'=>$orders],['order_statuses'=>$order_statuses],);
+     }
+     //store the order
+public function store(Storeorders $request)
+{
+
+    try {
+        $validated = $request->validated();
+        $Order = new Order();
+        $Order->OrderTitle = $request->OrderTitle;
+        $Order->order = $request->order;
+        $Order->notes = $request->notes;
+        $Order->status_id = $request->status_id;
+        $Order->user_id = auth()->id();
+        $Order->save();
+        toastr()->success(trans('messages.success'));
+        return redirect()->route('userorders.show',$Order->user_id);
+    }
+    catch (\Exception $e){
+        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+    }
+
+}
+//Update the specified resource in storage.
+public function update(Storeorders $request)
+{
+  try {
+      $validated = $request->validated();
+        $orders = Order::findOrFail($request->id);
+        $orders->update([
+        $orders->OrderTitle = $request->OrderTitle,
+        $orders->order = $request->order,
+        $orders->notes = $request->notes,
+        $orders->status_id = $request->status_id,
+      ]);
+      $id = auth()->id();
+      toastr()->success(trans('messages.Update'));
+      return redirect()->route('userorders.show',$id);
+  }
+  catch
+  (\Exception $e) {
+      return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+  }
+}
+  // Remove the specified resource from storage.
+  public function destroy(Request $request)
+  {
+
+    $orders = Order::findOrFail($request->id)->delete();
+    $id = auth()->id();
+    toastr()->error(trans('messages.Delete'));
+    return redirect()->route('userorders.show',$id);
+
+  }
+}

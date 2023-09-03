@@ -30,7 +30,7 @@ return [
     'Rememberme'=>'تذكرني',
     'Password'=>'كلمة المرور',
     'Email'=>'البريد الإلكتروني',
-    'Register'=>'حساب جديد',
+    'Register'=>'تسجيل حساب جديد',
     'Login'=>'تسجيل الدخول',
     'Alreadyregistered?'=>'لديك حساب مسبقاً ؟',
     'ConfirmPassword'=>'تأكيد كلمة المرور',
@@ -40,6 +40,14 @@ return [
     'NewOrderReceived'=>'تم تسجيل طلب جديد',
     'JustNow'=>'الآن',
     'NewRegistereduser'=>'تم تسجيل مستخدم جديد',
+    'UserName'=>'اسم المستخدم',
+    'UsersList'=>'لائحة المستخدمين',
+    'Users'=>'المستخدمين',
+    'Roles'=>'دور المستخدم',
+    'MyOrders' =>'طلباتي',
+    'language' =>'اللغة',
+    'wellcomeMessage' => 'مرحباً بك في نظام إدارة الطلبات',
+    'wellcomeMessage2'=>'رجاءً قم بتسجيل الدخول الى حسابك،أو قم بتسجيل حساب جديد إذا لم يكن لديك حساب مسبقاً',
 
 ];
 

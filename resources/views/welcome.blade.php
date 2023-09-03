@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('js/app.js') }}" rel="script">
         <title>Order Management System</title>
 
         <!-- Fonts -->
@@ -33,7 +35,9 @@
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                         @endif
                     @endauth
+
                 </div>
+
             @endif
 
             <div class=""  >
@@ -46,3 +50,4 @@
         </div>
     </body>
 </html>
+

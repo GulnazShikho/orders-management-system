@@ -93,7 +93,7 @@
                                            </div>
                                            <div class="modal-body">
                                                <!-- add_form -->
-                                               <form action="{{route('orders.update','test')}}" method="post">
+                                               <form action="{{route('userorders.update','test')}}" method="post">
                                                    {{method_field('patch')}}
                                                    @csrf
                                                    <div class="row">
@@ -172,7 +172,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('orders.destroy','test')}}" method="post">
+                <form action="{{route('userorders.destroy','test')}}" method="post">
                     {{method_field('Delete')}}
                     @csrf
                     {{ trans('Orders_Trans.Warning_Order') }}
@@ -214,7 +214,7 @@
                     </div>
                     <div class="modal-body">
                         <!-- add_form -->
-                        <form action="{{route('orders.store')}}" method="POST">
+                        <form action="{{route('userorders.store')}}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col">
